@@ -20,10 +20,12 @@ export const POST = async (req: Request) => {
         posts: true, // Include posts in the response
       },
     });
-
+//エラー文とってもいい
     return NextResponse.json(newUser);
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 };
+
+//7.29 ポストは値が取れてる
