@@ -1,7 +1,4 @@
 import UserDetail from "./components/UserDetail";
-import ViewUsers from "./components/UserDetail";
-
-ViewUsers;
 
 export default function Home() {
 	return (
