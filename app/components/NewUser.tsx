@@ -12,7 +12,7 @@ const NewUser = () => {
 
 	const handleSubmit = async () => {
 		setIsFetching(true);
-		try {
+		{
 			const response = await fetch("/api/user", {
 				method: "POST",
 
@@ -22,20 +22,11 @@ const NewUser = () => {
 					posts: [{ title, content }], // Send posts data
 				}),
 			});
-
-			if (!response.ok) {
-				throw new Error("Network response was not ok");
-			}
-
 			const data = await response.json();
-			console.log("User created:", data);
-			router.push("/"); // Navigate to the home page
-			router.refresh(); // Refresh the page data if needed
-		} catch (error) {
-			console.error("Failed to create user:", error);
-		} finally {
-			setIsFetching(false);
 		}
+		setIsFetching(false);
+		router.push("/");
+		router.refresh();
 	};
 
 	return (

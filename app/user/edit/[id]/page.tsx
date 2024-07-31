@@ -1,9 +1,9 @@
-"use client"
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+"use client";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 //--------------看一下老师的API和·Link--------------------
-
+//ここはいったん使わない
 // interface Post {
 //   id: number;
 //   title: string;
