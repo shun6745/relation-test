@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
+useParams;
 
 export type User = {
 	id: number;
@@ -25,7 +27,7 @@ const UserDetail = () => {
 		const fetchUsers = async () => {
 			setIsLoading(true);
 			{
-				const res = await fetch("/api/user/${parsInt(id)}");
+				const res = await fetch("/api/user/1");
 				const users = await res.json();
 				setUsers(users);
 			}
