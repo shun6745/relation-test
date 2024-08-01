@@ -24,18 +24,12 @@ const UserDetail = () => {
 	useEffect(() => {
 		const fetchUsers = async () => {
 			setIsLoading(true);
-			try {
-				const res = await fetch("/api/user/{id}");
-				if (!res.ok) {
-					throw new Error(`HTTP error! status: ${res.status}`);
-				}
+			{
+				const res = await fetch("/api/user/${parsInt(id)}");
 				const users = await res.json();
 				setUsers(users);
-			} catch (error) {
-				console.error("Error fetching users:", error);
-			} finally {
-				setIsLoading(false);
 			}
+			setIsLoading(false);
 		};
 		fetchUsers();
 	}, [reload]);
